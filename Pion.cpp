@@ -15,6 +15,27 @@ void Pion::jouer() {
 
     if (position_pion / largeur_M == largeur_M -1){
         position_pion += largeur_M +1;
+        if (position_pion / largeur_M== hauteur_M){
+            cout << "Le tésor n'a pas été trouvé." << endl;
+        }
+    }
+
+    else {
+        position_pion ++; 
     }
 
 }
+
+/* A METTRE DANS LE MAIN
+
+int main() {
+    Pion pion;
+    for (int i = 0; i<100, i++) {
+        pion.jouer();
+    }
+    return 0
+}
+
+
+
+*/
