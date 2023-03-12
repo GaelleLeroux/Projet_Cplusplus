@@ -2,15 +2,15 @@
 
 #ifndef PION_HPP
 #define PION_HPP
+
 class Pion {
-    public :
-
-    Pion();
-
-    void jouer(int M);
 
     private :
-    int x;
-    int y;
+    int position_pion;
+
+    public :
+    Pion();
+    void jouer();
+    
 };
 #endif
