@@ -1,5 +1,8 @@
 #include <iostream>
 
+#ifndef MAP_HPP
+#define MAP_HPP
+
 class Map {
     
     Map(int x,int y,int nmb, int nmb2);
@@ -9,6 +12,9 @@ class Map {
     void Arbre(int x);
     void Buisson(int x);
 
+    void afficher();
+
     private :
-    int M;
+    int M[3][4];
 };
+#endif
