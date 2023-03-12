@@ -1,10 +1,10 @@
 #include <iostream>
 
 
-class Piont {
+class Pion {
     public :
 
-    Piont();
+    Pion();
 
     void jouer(int M);
 
