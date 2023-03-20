@@ -10,7 +10,7 @@ class Pion {
 
     public :
     Pion();
-    void jouer();
+    void jouer(int M);
     
 };
 #endif
