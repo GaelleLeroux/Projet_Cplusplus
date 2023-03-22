@@ -12,7 +12,10 @@ render_area::render_area(QWidget *parent)
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     pixmap->load("./image.jpg");
-    auto smaller_pixmap = pixmap->scaled(32, 32, Qt.KeepAspectRatio, Qt.FastTransformation);
+    pix = *pixmap;
+    pix = pix.scaled(1100,400);
+    pixmap = &pix;
+    //auto smaller_pixmap = pixmap->scaled(32, 32, Qt.KeepAspectRatio, Qt.FastTransformation);
 }
 
 render_area::~render_area()
