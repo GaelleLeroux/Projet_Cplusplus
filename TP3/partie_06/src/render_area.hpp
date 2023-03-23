@@ -4,6 +4,7 @@
 #define RENDER_AREA_HPP
 
 #include <QWidget>
+#include <QColorDialog>
 
 //forward declaration of QPixmap
 class QPixmap;
@@ -32,11 +33,14 @@ protected:
     void mousePressEvent(QMouseEvent *event);
     /** Function called when the mouse is moved */
     void mouseMoveEvent(QMouseEvent *event);
+    void mouseDoubleClickEvent(QMouseEvent *event);
+    void MajCol(const QColor &color);
 
 private:
 
     /** A QPixmap is an image */
     QPixmap *pixmap;
+    QColor color;
     /** A boolean indicating if a circle should be drawn or not */
     bool draw_circle;
 
@@ -45,6 +49,9 @@ private:
     /** Current parameter of the circle
      *  \note (xc,yc) are the top left corner of the circle */
     int xc,yc,diameter;
+
+    int i;
+    
 
 };
 

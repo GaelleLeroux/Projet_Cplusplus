@@ -28,6 +28,7 @@ private:
 
 	/** A QPixmap is an image */
     QPixmap *pixmap;
+    QPixmap pix;
     /** A boolean indicating if a circle should be drawn or not */
     bool draw_circle;
 
