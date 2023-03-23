@@ -14,8 +14,16 @@ render_area::render_area(QWidget *parent)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
-}
+    QColorDialog dialog;
+    //QObject::connect(&dialog, &QColorDialog::currentColorChanged, (*this), &render_area::MajCol);
+    int i=0;
+    
 
+}
+void render_area::MajCol(const QColor &color)
+{
+
+}
 render_area::~render_area()
 {
     if(pixmap!=nullptr)
@@ -30,11 +38,13 @@ void render_area::paintEvent(QPaintEvent*)
     //A painter class able to draw in 2D
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
-
     //The drawing pen with its properties
+    
     QPen pen;
     pen.setWidth(4.0);
-    pen.setColor(Qt::blue);
+    if (i%3==0){pen.setColor(Qt::blue);};
+    if (i%3==1){pen.setColor(Qt::green);};
+    if (i%3==2){pen.setColor(Qt::red);};
     painter.setPen(pen);
 
     //The brush class is usefull to fill the interior of the shapes
@@ -61,6 +71,14 @@ void render_area::mousePressEvent(QMouseEvent *event)
     //when a click occurs, we store the current mouse position
     x_old=event->x();
     y_old=event->y();
+}
+
+void render_area::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    i = i+1;
+    QColor color = QColorDialog::getColor(Qt::white, nullptr, "Choose a color");
+    repaint();
+    
 }
 
 void render_area::mouseMoveEvent(QMouseEvent *event)
